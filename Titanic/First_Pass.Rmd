@@ -1,0 +1,13 @@
+---
+title: "First Pass at Titanic Data Set"
+output: html_notebook
+---
+
+The following is a first pass at the Titanic data set using some naive approaches.
+
+First, I want to load some useful packages. 
+
+```{r, message = FALSE} 
+library(tidyverse) 
+library(caret)
+```
