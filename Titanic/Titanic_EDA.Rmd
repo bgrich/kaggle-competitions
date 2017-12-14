@@ -114,3 +114,18 @@ xray::anomalies(training)$variables %>%
   knitr::kable()
 ```
 
+From calculating the anomalies on the training data, we can see that most of 
+the entries in the Cabin variable are NA. There are two options with this 
+entry as we can either remove the Cabin variable entirely or recode all of the 
+NA's as "No Cabin" or some similar value. We will investigate the other two 
+variables with NA's below to see if we can turn them into something useful.
+
+There are also three variables that show a number of zero observations. For the 
+Parch and SibSp variables, this should be fine. This just means that those 
+passengers are traveling without family members. For the fare, we may want to 
+investigate which of the passengers have zero fare as they may be crew members 
+or have some other identifying information.
+
+One interesting point that pops out from the anomalies function is that the 
+Ticket variable has only 681 distinct observations. This means that there must 
+be a few repeat tickets that bears a quick investigation.
