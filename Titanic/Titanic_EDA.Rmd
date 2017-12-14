@@ -90,7 +90,24 @@ testing <- testing %>%
 ## Checking Anomalies with `xray`
 
 Now that the data sets have been re-coded with factors, let's take a look for 
-any anomalies in the data set using the `xray` package.
+any anomalies in the data set using the `xray` package. The `xray` package 
+gives access to several functions for performing exploratory data analysis. 
+The first one we will use is the `anomalies()` function that returns a data 
+frame summarizing the variables in a provided data frame. 
+
+The function returns summaries for each variable showing:
+
+* The number of observations
+* The number and percentage of observations that are NA
+* The number and percentage of observations that are zero
+* The number and percentage of observations that are blank
+* The number and percentage of observations that are infinite
+* The number of distinct observations
+* The variable type 
+* The percentage of observations that are "anomalous"
+
+This information can give us a starting point to examine the data set and see 
+what variables will be useful for training our models.
 
 ```{r xray_anomalies, results = 'asis'}
 xray::anomalies(training)$variables %>% 
