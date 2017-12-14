@@ -192,7 +192,7 @@ testing &lt;- read_csv(&quot;test.csv&quot;, progress = FALSE)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Now, let’s want to take a look at the data.</p>
+<p>Now, let’s take a look at the data.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW5pbmdcbmBgYCJ9 -->
@@ -231,10 +231,25 @@ $ Embarked    &lt;chr&gt; &quot;S&quot;, &quot;C&quot;, &quot;S&quot;, &quot;S&q
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>We have 12 variables that we will want to look at. According to the data set description from Kaggle, the variables are defined in the following way:</p>
+<ul>
+<li>PassengerId – A numerical id for each passenger.</li>
+<li>Survived – The response variable as a factor showing survival.</li>
+<li>Pclass – The ticket class of the passenger used as a proxy for socio-economic class. This variable is a factor with levels 1 = 1st (Upper Class), 2 = 2nd (Middle Class), and 3 = 3rd (Lower Class).</li>
+<li>Name – The full name of the passenger with title. Married female passengers appear to have their partner’s name listed with their actual name in parentheses.</li>
+<li>Sex – A factor showing the sex of the passenger.</li>
+<li>Age – The age of the passenger. Estimated ages are given as xx.#.</li>
+<li>SibSp – The number of siblings and spouses the passnger has aboard.</li>
+<li>Parch – The number of parent/children relationships that the passneger has aboard.</li>
+<li>Ticket – Ticket number of the passenger.</li>
+<li>Fare – The passenger fare.</li>
+<li>Cabin – The passenge cabin number.</li>
+<li>Embarked – The port of embarkation. This is a factor with three levels C = Cherbourg, Q = Queenstown, S = Southampton.</li>
+</ul>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlRpdGFuaWMgRURBIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVG8gZ2V0IGEgc2Vuc2UgZm9yIHRoZSBUaXRhbmljIGRhdGEgc2V0LCB3ZSBhcmUgZ29pbmcgdG8gZG8gc29tZSBleHBsb3JhdG9yeSANCmRhdGEgYW5hbHlzaXMuIEFzIHBhcnQgb2YgdGhhdCwgd2Ugd2lsbCB1c2UgdGhlIGB4cmF5YCBwYWNrYWdlIHRvIGNoZWNrIA0KZm9yIGFub21hbGllcyBhbmQgbG9vayBhdCBkaXN0cmlidXRpb25zLg0KDQpgYGB7ciBzZXR1cCwgbWVzc2FnZSA9IEZBTFNFfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KHhyYXkpDQpgYGANCg0KIyMgRGF0YSBJbXBvcnQNCg0KRmlyc3QsIHdlIG5lZWQgdG8gaW1wb3J0IHRoZSB0cmFpbmluZyBhbmQgdGVzdGluZyBkYXRhLg0KDQpgYGB7ciwgbWVzc2FnZSA9IEZBTFNFfQ0KdHJhaW5pbmcgPC0gcmVhZF9jc3YoInRyYWluLmNzdiIsIHByb2dyZXNzID0gRkFMU0UpDQp0ZXN0aW5nIDwtIHJlYWRfY3N2KCJ0ZXN0LmNzdiIsIHByb2dyZXNzID0gRkFMU0UpDQpgYGANCg0KTm93LCBsZXQncyB3YW50IHRvIHRha2UgYSBsb29rIGF0IHRoZSBkYXRhLg0KDQpgYGB7cn0NCnRyYWluaW5nDQpgYGANCg0KV2UgY2FuIGFsc28gdXNlIGBnbGltcHNlYCB0byB0YWtlIGEgbG9vayBhdCB0aGUgdmFyaWFibGVzLiANCg0KYGBge3J9DQpnbGltcHNlKHRyYWluaW5nKQ0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlRpdGFuaWMgRURBIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KVG8gZ2V0IGEgc2Vuc2UgZm9yIHRoZSBUaXRhbmljIGRhdGEgc2V0LCB3ZSBhcmUgZ29pbmcgdG8gZG8gc29tZSBleHBsb3JhdG9yeSANCmRhdGEgYW5hbHlzaXMuIEFzIHBhcnQgb2YgdGhhdCwgd2Ugd2lsbCB1c2UgdGhlIGB4cmF5YCBwYWNrYWdlIHRvIGNoZWNrIA0KZm9yIGFub21hbGllcyBhbmQgbG9vayBhdCBkaXN0cmlidXRpb25zLg0KDQpgYGB7ciBzZXR1cCwgbWVzc2FnZSA9IEZBTFNFfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KHhyYXkpDQpgYGANCg0KIyMgRGF0YSBJbXBvcnQNCg0KRmlyc3QsIHdlIG5lZWQgdG8gaW1wb3J0IHRoZSB0cmFpbmluZyBhbmQgdGVzdGluZyBkYXRhLg0KDQpgYGB7ciwgbWVzc2FnZSA9IEZBTFNFfQ0KdHJhaW5pbmcgPC0gcmVhZF9jc3YoInRyYWluLmNzdiIsIHByb2dyZXNzID0gRkFMU0UpDQp0ZXN0aW5nIDwtIHJlYWRfY3N2KCJ0ZXN0LmNzdiIsIHByb2dyZXNzID0gRkFMU0UpDQpgYGANCg0KTm93LCBsZXQncyB0YWtlIGEgbG9vayBhdCB0aGUgZGF0YS4NCg0KYGBge3J9DQp0cmFpbmluZw0KYGBgDQoNCldlIGNhbiBhbHNvIHVzZSBgZ2xpbXBzZWAgdG8gdGFrZSBhIGxvb2sgYXQgdGhlIHZhcmlhYmxlcy4gDQoNCmBgYHtyfQ0KZ2xpbXBzZSh0cmFpbmluZykNCmBgYA0KDQpXZSBoYXZlIDEyIHZhcmlhYmxlcyB0aGF0IHdlIHdpbGwgd2FudCB0byBsb29rIGF0LiBBY2NvcmRpbmcgdG8gdGhlIGRhdGEgc2V0IA0KZGVzY3JpcHRpb24gZnJvbSBLYWdnbGUsIHRoZSB2YXJpYWJsZXMgYXJlIGRlZmluZWQgaW4gdGhlIGZvbGxvd2luZyB3YXk6IA0KDQoqIFBhc3NlbmdlcklkIC0tIEEgbnVtZXJpY2FsIGlkIGZvciBlYWNoIHBhc3Nlbmdlci4NCiogU3Vydml2ZWQgLS0gVGhlIHJlc3BvbnNlIHZhcmlhYmxlIGFzIGEgZmFjdG9yIHNob3dpbmcgc3Vydml2YWwuDQoqIFBjbGFzcyAtLSBUaGUgdGlja2V0IGNsYXNzIG9mIHRoZSBwYXNzZW5nZXIgdXNlZCBhcyBhIHByb3h5IGZvciBzb2Npby1lY29ub21pYyANCmNsYXNzLiBUaGlzIHZhcmlhYmxlIGlzIGEgZmFjdG9yIHdpdGggbGV2ZWxzIDEgPSAxc3QgKFVwcGVyIENsYXNzKSwgDQoyID0gMm5kIChNaWRkbGUgQ2xhc3MpLCBhbmQgMyA9IDNyZCAoTG93ZXIgQ2xhc3MpLg0KKiBOYW1lIC0tIFRoZSBmdWxsIG5hbWUgb2YgdGhlIHBhc3NlbmdlciB3aXRoIHRpdGxlLiBNYXJyaWVkIGZlbWFsZSBwYXNzZW5nZXJzIA0KYXBwZWFyIHRvIGhhdmUgdGhlaXIgcGFydG5lcidzIG5hbWUgbGlzdGVkIHdpdGggdGhlaXIgYWN0dWFsIG5hbWUgaW4gDQpwYXJlbnRoZXNlcy4NCiogU2V4IC0tIEEgZmFjdG9yIHNob3dpbmcgdGhlIHNleCBvZiB0aGUgcGFzc2VuZ2VyLg0KKiBBZ2UgLS0gVGhlIGFnZSBvZiB0aGUgcGFzc2VuZ2VyLiBFc3RpbWF0ZWQgYWdlcyBhcmUgZ2l2ZW4gYXMgeHguIy4gDQoqIFNpYlNwIC0tIFRoZSBudW1iZXIgb2Ygc2libGluZ3MgYW5kIHNwb3VzZXMgdGhlIHBhc3NuZ2VyIGhhcyBhYm9hcmQuIA0KKiBQYXJjaCAtLSBUaGUgbnVtYmVyIG9mIHBhcmVudC9jaGlsZHJlbiByZWxhdGlvbnNoaXBzIHRoYXQgdGhlIHBhc3NuZWdlciBoYXMgDQphYm9hcmQuDQoqIFRpY2tldCAtLSBUaWNrZXQgbnVtYmVyIG9mIHRoZSBwYXNzZW5nZXIuDQoqIEZhcmUgLS0gVGhlIHBhc3NlbmdlciBmYXJlLiANCiogQ2FiaW4gLS0gVGhlIHBhc3NlbmdlIGNhYmluIG51bWJlci4gDQoqIEVtYmFya2VkIC0tIFRoZSBwb3J0IG9mIGVtYmFya2F0aW9uLiBUaGlzIGlzIGEgZmFjdG9yIHdpdGggdGhyZWUgbGV2ZWxzIA0KQyA9IENoZXJib3VyZywgUSA9IFF1ZWVuc3Rvd24sIFMgPSBTb3V0aGFtcHRvbi4NCg0K</div>
 
 
 

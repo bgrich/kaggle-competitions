@@ -33,3 +33,25 @@ We can also use `glimpse` to take a look at the variables.
 glimpse(training)
 ```
 
+We have 12 variables that we will want to look at. According to the data set 
+description from Kaggle, the variables are defined in the following way: 
+
+* PassengerId -- A numerical id for each passenger.
+* Survived -- The response variable as a factor showing survival.
+* Pclass -- The ticket class of the passenger used as a proxy for socio-economic 
+class. This variable is a factor with levels 1 = 1st (Upper Class), 
+2 = 2nd (Middle Class), and 3 = 3rd (Lower Class).
+* Name -- The full name of the passenger with title. Married female passengers 
+appear to have their partner's name listed with their actual name in 
+parentheses.
+* Sex -- A factor showing the sex of the passenger.
+* Age -- The age of the passenger. Estimated ages are given as xx.#. 
+* SibSp -- The number of siblings and spouses the passnger has aboard. 
+* Parch -- The number of parent/children relationships that the passneger has 
+aboard.
+* Ticket -- Ticket number of the passenger.
+* Fare -- The passenger fare. 
+* Cabin -- The passenge cabin number. 
+* Embarked -- The port of embarkation. This is a factor with three levels 
+C = Cherbourg, Q = Queenstown, S = Southampton.
+
