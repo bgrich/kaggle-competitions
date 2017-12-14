@@ -12,3 +12,18 @@ library(tidyverse)
 library(xray)
 ```
 
+## Data Import
+
+First, we need to import the training and testing data.
+
+```{r, message = FALSE}
+training <- read_csv("train.csv", progress = FALSE)
+testing <- read_csv("test.csv", progress = FALSE)
+```
+
+Now, let's want to take a look at the data.
+
+```{r}
+training
+```
+
