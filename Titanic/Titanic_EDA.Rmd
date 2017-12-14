@@ -55,3 +55,34 @@ aboard.
 * Embarked -- The port of embarkation. This is a factor with three levels 
 C = Cherbourg, Q = Queenstown, S = Southampton.
 
+Before we begin the exploration, let's recode the factors with proper levels. 
+
+```{r}
+training <- training %>% 
+  mutate(Survived = factor(Survived, 
+                           levels = c(1, 0), 
+                           labels = c("Yes", "No"))) %>% 
+  mutate(Pclass = factor(Pclass, 
+                         levels = c(3, 2, 1), 
+                         labels = c("3rd", "2nd", "1st"), 
+                         ordered = TRUE)) %>% 
+  mutate(Sex = factor(Sex, 
+                      levels = c("male", "female"))) %>% 
+  mutate(Embarked = factor(Embarked, 
+                           levels = c("C", "Q", "S"), 
+                           labels = c("Cherbourg", "Queenstown", "Southampton")))
+```
+
+```{r}
+testing <- testing %>% 
+  mutate(Pclass = factor(Pclass, 
+                         levels = c(3, 2, 1), 
+                         labels = c("3rd", "2nd", "1st"), 
+                         ordered = TRUE)) %>% 
+  mutate(Sex = factor(Sex, 
+                      levels = c("male", "female"))) %>% 
+  mutate(Embarked = factor(Embarked, 
+                           levels = c("C", "Q", "S"), 
+                           labels = c("Cherbourg", "Queenstown", "Southampton")))
+```
+
