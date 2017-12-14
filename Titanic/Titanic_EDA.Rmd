@@ -21,7 +21,7 @@ training <- read_csv("train.csv", progress = FALSE)
 testing <- read_csv("test.csv", progress = FALSE)
 ```
 
-Now, let's want to take a look at the data.
+Now, let's take a look at the data.
 
 ```{r}
 training
