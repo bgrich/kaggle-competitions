@@ -129,3 +129,12 @@ or have some other identifying information.
 One interesting point that pops out from the anomalies function is that the 
 Ticket variable has only 681 distinct observations. This means that there must 
 be a few repeat tickets that bears a quick investigation.
+
+## Distributions with `xray`
+
+```{r, warning = FALSE, fig.width = 7}
+training %>% 
+  select(-PassengerId, -Name) %>% 
+  xray::distributions()
+```
+
