@@ -3,3 +3,12 @@ title: "Titanic EDA"
 output: html_notebook
 ---
 
+To get a sense for the Titanic data set, we are going to do some exploratory 
+data analysis. As part of that, we will use the `xray` package to check 
+for anomalies and look at distributions.
+
+```{r setup, message = FALSE}
+library(tidyverse)
+library(xray)
+```
+
