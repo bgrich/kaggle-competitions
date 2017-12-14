@@ -92,6 +92,7 @@ Now that the data sets have been re-coded with factors, let's take a look for
 any anomalies in the data set using the `xray` package.
 
 ```{r xray_anomalies, results = 'asis'}
-knitr::kable(xray::anomalies(training)$variables)
+xray::anomalies(training)$variables %>% 
+  knitr::kable()
 ```
 
