@@ -140,6 +140,7 @@ we will remove the ordering for that.
 ```{r, warning = FALSE, fig.width = 7}
 training %>% 
   select(-PassengerId, -Name) %>% 
+  mutate(Pclass = factor(Pclass, ordered = FALSE)) %>% 
   xray::distributions()
 ```
 
