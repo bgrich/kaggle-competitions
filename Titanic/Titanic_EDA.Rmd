@@ -87,7 +87,9 @@ testing <- testing %>%
                            labels = c("Cherbourg", "Queenstown", "Southampton")))
 ```
 
-## Checking Anomalies with `xray`
+## Exploration with `xray`
+
+### Checking Anomalies with `xray`
 
 Now that the data sets have been re-coded with factors, let's take a look for 
 any anomalies in the data set using the `xray` package. The `xray` package 
@@ -135,7 +137,7 @@ This is why the `Pclass` variable has a class of "Unknown" from the anomalies()
 function. This will also cause a problem with the distributions() function so 
 we will remove the ordering for that.
 
-## Distributions with `xray`
+### Distributions with `xray`
 
 Next, we will use the `distributions()` function from the `xray` package to 
 visually inspect the variables. This function returns a series of box plots 
