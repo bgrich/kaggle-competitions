@@ -130,6 +130,11 @@ One interesting point that pops out from the anomalies function is that the
 Ticket variable has only 681 distinct observations. This means that there must 
 be a few repeat tickets that bears a quick investigation.
 
+Note: As of this writing, the `xray` does not currently support ordered factors. 
+This is why the `Pclass` variable has a class of "Unknown" from the anomalies() 
+function. This will also cause a problem with the distributions() function so 
+we will remove the ordering for that.
+
 ## Distributions with `xray`
 
 ```{r, warning = FALSE, fig.width = 7}
