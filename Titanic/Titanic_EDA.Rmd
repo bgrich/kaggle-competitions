@@ -137,6 +137,11 @@ we will remove the ordering for that.
 
 ## Distributions with `xray`
 
+Next, we will use the `distributions()` function from the `xray` package to 
+visually inspect the variables. This function returns a series of box plots 
+(for categorical variables) and histograms (for numerical variables) along 
+with giving some distributions and breakdowns for the numerical variables. 
+
 ```{r, warning = FALSE, fig.width = 9}
 training %>% 
   select(-PassengerId, -Name) %>% 
