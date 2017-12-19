@@ -206,6 +206,28 @@ training %>%
        y = "Observations")
 ```
 
+Next, we want to explore whether there is any connection between missing Age 
+values and the other variables. Doing a quick visual exploration of the data, 
+most of the missing Age values seem to also be missing Cabin values. Looking at 
+the names, these appear to be passengers from various age ranges as some of 
+the names are women with married names. To further examine, we can use the 
+`xray::distributions()` function again on just the Ages with NA's.
+
+```{r}
+training %>% 
+  filter(is.na(Age)) %>% 
+  mutate(Pclass = factor(Pclass, ordered = FALSE)) %>% 
+  select(-Age, -PassengerId, -Ticket, -Name, -Cabin) %>% 
+  xray::distributions()
+```
+
+From these figures, we can see that many of the Age NA's come from lower 
+class passengers and that a majority of them were male and did not survive. 
+From this, I would say that the observations with Age NA's cannot be ignored. 
+To get around this for modeling, we could try binning the ages and including 
+a bin that contains all the missing ages. According to the data explanation 
+included with this data sets, these missing ages may be estimated ages that 
+did not make it into the Kaggle dataset.
 
 ### Tickets
 
