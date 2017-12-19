@@ -161,6 +161,13 @@ variables have many categories with low counts that make them hard to visualize
 with a bar plot. However, the `distributions()` function works great for the 
 other variables as a means of quick visual analysis.
 
+## Further Exploration
 
+The `xray` package has given us a good starting point for some further 
+analysis. We will want to look closer at the Fare and Age variables as there 
+might be further structure hidden due to the outliers and binning choices. We 
+also want to inspect the Age variable for the NAs that are present and see if 
+we can extract anything useful. We may also want to look at the Ticket variable 
+and see if there is a good way to represent the tickets. 
 
 
