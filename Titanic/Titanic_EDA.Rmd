@@ -189,8 +189,23 @@ training %>%
        y = "Observations")
 ```
 
-
 ### Age
+
+We can examine the Age variable further by reproducing the Age histogram from 
+`xray::distributions()`, but increasing the number of bins to 30. From that, 
+we see that the ages are distributed with a slight skew to older ages. There is 
+also a small drop off in younger passnegers from ages 6 to 14.
+
+```{r}
+training %>% 
+  filter(!is.na(Age)) %>% 
+  ggplot(aes(x = Age)) +
+  geom_histogram(bins = 30, color = "white") + 
+  theme_bw() +
+  labs(x = "Age (years old)", 
+       y = "Observations")
+```
+
 
 ### Tickets
 
