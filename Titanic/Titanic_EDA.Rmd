@@ -229,7 +229,7 @@ a bin that contains all the missing ages. According to the data explanation
 included with this data sets, these missing ages may be estimated ages that 
 did not make it into the Kaggle dataset.
 
-### Tickets
+### Ticket
 
 Lastly, I want to take a closer look at the tickets. According to the 
 `xray::anamolies()` function, there are at least few non-unique tickets. Since 
