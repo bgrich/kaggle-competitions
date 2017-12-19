@@ -137,7 +137,7 @@ we will remove the ordering for that.
 
 ## Distributions with `xray`
 
-```{r, warning = FALSE, fig.width = 7}
+```{r, warning = FALSE, fig.width = 9}
 training %>% 
   select(-PassengerId, -Name) %>% 
   mutate(Pclass = factor(Pclass, ordered = FALSE)) %>% 
