@@ -231,4 +231,25 @@ did not make it into the Kaggle dataset.
 
 ### Tickets
 
+Lastly, I want to take a closer look at the tickets. According to the 
+`xray::anamolies()` function, there are at least few non-unique tickets. Since 
+there are a large number of categories with only a few counts in each, an 
+easier way to model these may be to bin the tickets based on their uniqueness, 
+i.e., is a particular ticket unique to 1 person, 2 people, 3 people, etc. We 
+can examine this by grouping by the Ticket, getting the count per ticket, and 
+then creating a contingency table of the number of counts. 
+
+```{r}
+training %>% 
+  group_by(Ticket) %>% 
+  count() %>% 
+  ungroup() %>% 
+  select(-Ticket) %>% 
+  table()
+```
+
+From the contingency table, we can see that the majority of the tickets are 
+unique, with the next highest being unique to two people. For modeling, we will 
+likely want to collapse 5, 6, and 7 down to a single category of 5+ due to 
+the low counts in those categories.
 
