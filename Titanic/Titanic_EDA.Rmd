@@ -163,6 +163,15 @@ variables have many categories with low counts that make them hard to visualize
 with a bar plot. However, the `distributions()` function works great for the 
 other variables as a means of quick visual analysis.
 
+### Thoughts on `xray` package
+
+The functions in the `xray` package provide a simple way to quickly glean some 
+insight from unknown data sets. By letting the user pull out information on the 
+anomalies and distributions of variables, the user is able to easily compare 
+the variables and determine which ones require further investigation. It is a 
+wonderful stepping off point for deeper analysis and I look forward to see the 
+package develop further.
+
 ## Further Exploration
 
 The `xray` package has given us a good starting point for some further 
