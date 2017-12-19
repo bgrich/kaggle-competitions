@@ -144,4 +144,3 @@ training %>%
   xray::distributions()
 ```
 
-Note that `xray` does not currently support ordered factor class data.
