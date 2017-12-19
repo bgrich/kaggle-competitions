@@ -172,4 +172,10 @@ also want to inspect the Age variable for the NAs that are present and see if
 we can extract anything useful. We may also want to look at the Ticket variable 
 and see if there is a good way to represent the tickets. 
 
+### Fare
+
+### Age
+
+### Tickets
+
 
