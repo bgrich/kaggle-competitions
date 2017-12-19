@@ -142,6 +142,10 @@ visually inspect the variables. This function returns a series of box plots
 (for categorical variables) and histograms (for numerical variables) along 
 with giving some distributions and breakdowns for the numerical variables. 
 
+For the bar plots, the axis labeled as "Rows" is actually the number of 
+observations of each variable category. For the histograms, the number of 
+observations has been scaled for the associated density plot.
+
 ```{r, warning = FALSE, fig.width = 9}
 training %>% 
   select(-PassengerId, -Name) %>% 
