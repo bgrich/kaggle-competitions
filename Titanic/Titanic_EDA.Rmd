@@ -262,3 +262,17 @@ unique, with the next highest being unique to two people. For modeling, we will
 likely want to collapse 5, 6, and 7 down to a single category of 5+ due to 
 the low counts in those categories.
 
+## Next Steps
+
+Now that we have taken a look at the data, we will next want to clean it and 
+get it in a form that we can send to our models. This may include a few feature 
+transformations as well. Of the cleaning we need to do, removing some of the 
+NA's we found will be the first step. Unfortunately, some of the variables have 
+a large number of NA's so we will need to transform those variables to account 
+for them. 
+
+Some feature transformations that may be useful are splitting the names of 
+passengers apart to get to their titles (Mr., Mrs., Doctor, etc.). Another 
+transformation mentioned above would be to bin the ages, allowing for an 
+"Unknown" bin to handle all the missing ages. The ticket information can also 
+be transformed based on the number of passengers that used the same ticket.
