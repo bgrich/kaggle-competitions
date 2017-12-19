@@ -149,3 +149,14 @@ training %>%
   xray::distributions()
 ```
 
+The `distributions()` function gives us a very rough visual tool for inspecting 
+the variables. The function allows us to see some general trends and places 
+that could use further checking. For instance, with this data set, it is clear 
+that the fare is being skewed by large outliers. Both the cabin and ticket 
+variables have many categories with low counts that make them hard to visualize 
+with a bar plot. However, the `distributions()` function works great for the 
+other variables as a means of quick visual analysis.
+
+
+
+
